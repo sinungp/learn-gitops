@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   namespace: ngoprek
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: nginx=nginx
+    argocd-image-updater.argoproj.io/nginx.update-strategy: latest
   labels:
     app: nginx
 spec:
@@ -17,6 +20,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.26
+        image: nginx:1.25
         ports:
         - containerPort: 80
