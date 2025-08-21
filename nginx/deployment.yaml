@@ -3,9 +3,6 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   namespace: ngoprek
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: nginx=nginx
-    argocd-image-updater.argoproj.io/nginx.update-strategy: latest
   labels:
     app: nginx
 spec:
